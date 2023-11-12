@@ -8,6 +8,8 @@ $("div").click(function () {
     console.log($(this).index());
 });
 
-console.log($("div").eq(2).find(".more"));
+// console.log($("div").eq(2).find(".some"));
+// console.log($(".some").closest(".findmes").addClass("dsdsdsdsd"));
+console.log($(".findme").siblings());
 
 // console.log($("button").html("hello"));
