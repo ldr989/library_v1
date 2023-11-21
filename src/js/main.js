@@ -14,17 +14,25 @@ $("button")
         $(".w-500").fadeToggle(800);
     });
 
-$(".wrap").html(
-    `<div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton">
-            Dropdown button
-        </button>
-        <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
-            <a href="#" class="dropdown-item">Action #1</a>
-            <a href="#" class="dropdown-item">Action #2</a>
-            <a href="#" class="dropdown-item">Action #2</a>
-        </div>
-    </div>`
+$("#trigger").click(() =>
+    $("#trigger").createModal({
+        text: {
+            title: "Modal title",
+            body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad magnam aliquid, assumenda expedita dignissimos consequatur voluptatibus tempora, corrupti esse nesciunt dolorum sint, consequuntur quisquam praesentium fuga. Neque corrupti harum numquam.",
+        },
+        btns: {
+            count: 2,
+            settings: [
+                ["Close", ["btn-danger", "mr-10"], true],
+                [
+                    "Save changes",
+                    ["btn-success"],
+                    false,
+                    () => {
+                        alert("Данные сохранны");
+                    },
+                ],
+            ],
+        },
+    })
 );
-
-$(".dropdown-toggle").dropdown();
